@@ -1,0 +1,47 @@
+[project]
+name = "rag-web-scraper"
+version = "0.1.0"
+description = "RAG Web Scraper with Ollama and LangChain"
+authors = [
+    {name = "Sascha Corti",email = "sascha@corti.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "streamlit (>=1.44.1,<2.0.0)",
+    "langchain (>=0.3.23,<0.4.0)",
+    "langchain-community (>=0.3.21,<0.4.0)",
+    "langchain-core (>=0.3.51,<0.4.0)",
+    "langchain-ollama (>=0.3.1,<0.4.0)",
+    "beautifulsoup4 (>=4.13.3,<5.0.0)",
+    "markdownify (>=1.1.0,<2.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "N", "UP", "ANN", "C4", "SIM", "ARG", "ERA", "PL", "RUF"]
+ignore = ["PLR0913"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.5"
+mypy = "^1.15.0"
+
